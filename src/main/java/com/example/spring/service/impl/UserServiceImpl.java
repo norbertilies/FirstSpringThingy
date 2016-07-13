@@ -9,12 +9,21 @@ import com.example.spring.repository.impl.UserRepositoryImpl;
 import com.example.spring.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 @Component
+@Service("USI1")
 public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserRepositoryImpl myUserRepositoryImpl;
+
+    @Autowired
+    private User u1;
+    @Autowired
+    private User u2;
+
+
 
     @Override
     public List<User> list() {
@@ -35,6 +44,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void save(User user) {
+
+        System.out.println("User 1: " +u1);
+        System.out.println("User 2: "+u2);
         //call method from UserRepository and remove throw
         myUserRepositoryImpl.save(user);
 
