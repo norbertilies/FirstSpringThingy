@@ -1,18 +1,21 @@
 package com.example.spring.domain;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class User {
 	private String lastname;
     private String firstname;
-    private String id;
+    private int id;
     private int age;
     public User(){
         lastname="No last name";
         firstname = "No first name";
         age = -1;
-        id = "Unknown";
+        id = -1;
     }
 
-    public User(String id, String lastname, String firstname, int age) {
+    public User(int id, String lastname, String firstname, int age) {
         this.id = id;
         this.lastname = lastname;
         this.firstname = firstname;
@@ -27,11 +30,11 @@ public class User {
         this.firstname = firstname;
     }
 
-    public String getId() {
-        return id;
+    public int getId() {
+        return this.id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
